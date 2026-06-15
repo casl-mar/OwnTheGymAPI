@@ -1,3 +1,5 @@
 spring:
   application:
     name: own-the-gym
+  profiles:
+    active: dev
