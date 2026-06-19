@@ -36,6 +36,7 @@ public class WorkoutService {
                 .title(request.getTitle())
                 .level(request.getLevel())
                 .type(request.getType())
+                .imageUrl(request.getImageUrl())
                 .build();
         workout.setDescription(request.getDescription());
         applySets(workout, principal.getId(), request.getSets());
@@ -77,6 +78,7 @@ public class WorkoutService {
         Workout workout = findOwnedWorkout(principal.getId(), id);
         workout.setTitle(request.getTitle());
         workout.setDescription(request.getDescription());
+        workout.setImageUrl(request.getImageUrl());
         workout.setLevel(request.getLevel());
         workout.setType(request.getType());
         workout.getSets().clear();

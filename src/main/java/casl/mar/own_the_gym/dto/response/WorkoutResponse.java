@@ -16,6 +16,7 @@ public class WorkoutResponse {
     private UUID id;
     private String title;
     private String description;
+    private String imageUrl;
     private DifficultyLevel level;
     private WorkoutType type;
     private List<WorkSetResponse> sets;
@@ -25,6 +26,7 @@ public class WorkoutResponse {
                 .id(workout.getId())
                 .title(workout.getTitle())
                 .description(workout.getDescription())
+                .imageUrl(workout.getImageUrl())
                 .level(workout.getLevel())
                 .type(workout.getType())
                 .sets(workout.getSets().stream()

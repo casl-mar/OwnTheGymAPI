@@ -14,6 +14,7 @@ public class ExerciseResponse {
     private String title;
     private String description;
     private String videoUrl;
+    private String imageUrl;
 
     public static ExerciseResponse from(Exercise exercise) {
         return ExerciseResponse.builder()
@@ -21,6 +22,7 @@ public class ExerciseResponse {
                 .title(exercise.getTitle())
                 .description(exercise.getDescription())
                 .videoUrl(exercise.getVideoUrl())
+                .imageUrl(exercise.getImageUrl())
                 .build();
     }
 }

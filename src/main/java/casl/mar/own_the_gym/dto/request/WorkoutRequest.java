@@ -18,6 +18,8 @@ public class WorkoutRequest {
 
     private String description;
 
+    private String imageUrl;
+
     @NotNull
     private DifficultyLevel level;
 

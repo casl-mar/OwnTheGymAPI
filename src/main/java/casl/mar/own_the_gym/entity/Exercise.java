@@ -27,4 +27,5 @@ public class Exercise {
     private String title;
     private String description;
     private String videoUrl;
+    private String imageUrl;
 }

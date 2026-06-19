@@ -27,8 +27,9 @@ public class Challenge {
 
     private String title;
     private String description;
+    private String imageUrl;
 
-    @OneToMany(mappedBy = "challenge", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "challenge", cascade = CascadeType.ALL, orphanRemoval = true)
     @Builder.Default
     private List<ChallengeWorkout> challengeWorkouts = new ArrayList<>();
 }

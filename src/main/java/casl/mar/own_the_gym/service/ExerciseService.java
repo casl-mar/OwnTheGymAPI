@@ -31,6 +31,7 @@ public class ExerciseService {
                 .title(request.getTitle())
                 .description(request.getDescription())
                 .videoUrl(request.getVideoUrl())
+                .imageUrl(request.getImageUrl())
                 .build();
 
         return ExerciseResponse.from(exerciseRepository.save(exercise));
@@ -54,6 +55,7 @@ public class ExerciseService {
         exercise.setTitle(request.getTitle());
         exercise.setDescription(request.getDescription());
         exercise.setVideoUrl(request.getVideoUrl());
+        exercise.setImageUrl(request.getImageUrl());
         return ExerciseResponse.from(exercise);
     }
 

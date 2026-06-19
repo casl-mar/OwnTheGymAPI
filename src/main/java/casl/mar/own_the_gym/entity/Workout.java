@@ -29,6 +29,7 @@ public class Workout {
 
     private String title;
     private String Description;
+    private String imageUrl;
 
     @Enumerated(EnumType.STRING)
     private DifficultyLevel level;

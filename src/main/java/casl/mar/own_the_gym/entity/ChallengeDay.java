@@ -16,7 +16,7 @@ import java.util.UUID;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class WorkoutDay {
+public class ChallengeDay {
     @Id
     @GeneratedValue
     private UUID id;
@@ -26,8 +26,8 @@ public class WorkoutDay {
     private Calendar calendar;
 
     @ManyToOne
-    @JoinColumn(name = "workout_id", nullable = false)
-    private Workout workout;
+    @JoinColumn(name = "challenge_id", nullable = false)
+    private Challenge challenge;
 
     @Column(nullable = false)
     private LocalDateTime day;
