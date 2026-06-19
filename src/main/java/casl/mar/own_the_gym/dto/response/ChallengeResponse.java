@@ -1,6 +1,7 @@
 package casl.mar.own_the_gym.dto.response;
 
 import casl.mar.own_the_gym.entity.Challenge;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.Builder;
 import lombok.Data;
 
@@ -9,6 +10,7 @@ import java.util.UUID;
 
 @Data
 @Builder
+@JsonPropertyOrder({"id", "title", "description", "imageUrl", "workouts"})
 public class ChallengeResponse {
 
     private UUID id;

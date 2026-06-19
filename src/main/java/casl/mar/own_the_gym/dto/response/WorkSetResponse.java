@@ -1,6 +1,7 @@
 package casl.mar.own_the_gym.dto.response;
 
 import casl.mar.own_the_gym.entity.WorkSet;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.Builder;
 import lombok.Data;
 
@@ -8,6 +9,7 @@ import java.util.UUID;
 
 @Data
 @Builder
+@JsonPropertyOrder({"id", "exerciseId", "exerciseTitle", "numberOfReps", "amountOfTime"})
 public class WorkSetResponse {
 
     private UUID id;

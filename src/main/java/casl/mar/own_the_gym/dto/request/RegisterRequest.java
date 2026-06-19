@@ -1,11 +1,13 @@
 package casl.mar.own_the_gym.dto.request;
 
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
 
 @Data
+@JsonPropertyOrder({"username", "email", "password"})
 public class RegisterRequest {
 
     @NotBlank

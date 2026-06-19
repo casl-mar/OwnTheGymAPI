@@ -3,6 +3,7 @@ package casl.mar.own_the_gym.dto.response;
 import casl.mar.own_the_gym.entity.Workout;
 import casl.mar.own_the_gym.entity.enums.DifficultyLevel;
 import casl.mar.own_the_gym.entity.enums.WorkoutType;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.Builder;
 import lombok.Data;
 
@@ -11,6 +12,7 @@ import java.util.UUID;
 
 @Data
 @Builder
+@JsonPropertyOrder({"id", "title", "description", "imageUrl", "level", "type", "sets"})
 public class WorkoutResponse {
 
     private UUID id;
