@@ -28,4 +28,8 @@ public class Calendar {
     @OneToMany(mappedBy = "calendar", cascade = CascadeType.ALL)
     @Builder.Default
     private List<WorkoutDay> workoutDays = new ArrayList<>();
+
+    @OneToMany(mappedBy = "calendar", cascade = CascadeType.ALL)
+    @Builder.Default
+    private List<ChallengeDay> challengeDays = new ArrayList<>();
 }
