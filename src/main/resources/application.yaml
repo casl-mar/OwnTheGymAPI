@@ -2,4 +2,4 @@ spring:
   application:
     name: own-the-gym
   profiles:
-    active: ${SPRING_PROFILES_ACTIVE:dev}
+    active: docker
