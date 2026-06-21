@@ -1,0 +1,31 @@
+server:
+  port: 8080
+
+security:
+  jwt:
+    secret: ${JWT_SECRET}
+    expiration-ms: ${JWT_EXPIRATION_MS:86400000}
+
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+    persist-authorization: true
+
+jackson:
+  mapper:
+    sort-properties-alphabetically: false
+
+spring:
+  datasource:
+    url: jdbc:postgresql://${POSTGRES_HOST:db}:${POSTGRES_PORT:5432}/${POSTGRES_DB:own_the_gym}
+    username: ${POSTGRES_USER:postgres}
+    password: ${POSTGRES_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    open-in-view: false

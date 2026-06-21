@@ -6,6 +6,7 @@ target/
 
 ### Config Files ###
 application-dev.yaml
+.env
 
 ### STS ###
 .apt_generated

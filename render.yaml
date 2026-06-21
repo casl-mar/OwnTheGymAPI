@@ -1,0 +1,42 @@
+# Render Blueprint — free tier
+# https://render.com/docs/blueprint-spec
+
+databases:
+  - name: own-the-gym-db
+    plan: free
+    databaseName: own_the_gym
+    user: own_the_gym
+
+services:
+  - type: web
+    name: own-the-gym
+    runtime: docker
+    plan: free
+    healthCheckPath: /swagger-ui/index.html
+    envVars:
+      - key: SPRING_PROFILES_ACTIVE
+        value: docker
+      - key: JWT_SECRET
+        generateValue: true
+      - key: JWT_EXPIRATION_MS
+        value: "86400000"
+      - key: POSTGRES_HOST
+        fromDatabase:
+          name: own-the-gym-db
+          property: host
+      - key: POSTGRES_PORT
+        fromDatabase:
+          name: own-the-gym-db
+          property: port
+      - key: POSTGRES_DB
+        fromDatabase:
+          name: own-the-gym-db
+          property: database
+      - key: POSTGRES_USER
+        fromDatabase:
+          name: own-the-gym-db
+          property: user
+      - key: POSTGRES_PASSWORD
+        fromDatabase:
+          name: own-the-gym-db
+          property: password
