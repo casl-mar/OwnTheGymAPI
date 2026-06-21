@@ -19,7 +19,7 @@ jackson:
 
 spring:
   datasource:
-    url: jdbc:{POSTGRES_HOST:db}
+    url: jdbc:postgresql://${POSTGRES_HOST:localhost}:${POSTGRES_PORT:5432}/${POSTGRES_DB:own_the_gym} 
     username: ${POSTGRES_USER:postgres}
     password: ${POSTGRES_PASSWORD}
     driver-class-name: org.postgresql.Driver
