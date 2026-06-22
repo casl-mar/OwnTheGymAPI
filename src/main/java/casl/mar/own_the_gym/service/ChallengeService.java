@@ -81,7 +81,7 @@ public class ChallengeService {
 
     private void applyWorkouts(Challenge challenge, UUID creatorId, List<UUID> workoutIds) {
         if (workoutIds == null || workoutIds.isEmpty()) {
-            return;
+            throw new BadRequestException("Challenge must have at least one workout");
         }
 
         Set<UUID> uniqueIds = new HashSet<>();
