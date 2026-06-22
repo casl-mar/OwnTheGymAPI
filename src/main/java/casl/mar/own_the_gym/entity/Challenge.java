@@ -32,4 +32,8 @@ public class Challenge {
     @OneToMany(mappedBy = "challenge", cascade = CascadeType.ALL, orphanRemoval = true)
     @Builder.Default
     private List<ChallengeWorkout> challengeWorkouts = new ArrayList<>();
+
+    @OneToMany(mappedBy = "challenge", cascade = CascadeType.ALL, orphanRemoval = true)
+    @Builder.Default
+    private List<ChallengeDay> challengeDays = new ArrayList<>();
 }

@@ -18,4 +18,6 @@ public interface ChallengeDayRepository extends JpaRepository<ChallengeDay, UUID
     List<ChallengeDay> findByCalendarIdOrderByDayDesc(UUID calendarId);
 
     long countByCalendarId(UUID calendarId);
+
+    void deleteAllByChallengeId(UUID challengeId);
 }

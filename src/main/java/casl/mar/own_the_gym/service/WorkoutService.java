@@ -10,6 +10,7 @@ import casl.mar.own_the_gym.entity.Workout;
 import casl.mar.own_the_gym.exception.NotFoundException;
 import casl.mar.own_the_gym.entity.enums.WorkoutType;
 import casl.mar.own_the_gym.repository.UserRepository;
+import casl.mar.own_the_gym.repository.WorkoutDayRepository;
 import casl.mar.own_the_gym.repository.WorkoutRepository;
 import casl.mar.own_the_gym.security.UserPrincipal;
 import lombok.RequiredArgsConstructor;
@@ -25,6 +26,7 @@ public class WorkoutService {
 
     private final WorkoutRepository workoutRepository;
     private final ExerciseService exerciseService;
+    private final WorkoutDayRepository workoutDayRepository;
     private final UserRepository userRepository;
 
     @Transactional
@@ -90,6 +92,7 @@ public class WorkoutService {
     @Transactional
     public void delete(UserPrincipal principal, UUID id) {
         Workout workout = findOwnedWorkout(principal.getId(), id);
+        workoutDayRepository.deleteAllByWorkoutId(workout.getId());
         workoutRepository.delete(workout);
     }
 

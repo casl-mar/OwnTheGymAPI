@@ -18,4 +18,6 @@ public interface WorkoutDayRepository extends JpaRepository<WorkoutDay, UUID> {
     List<WorkoutDay> findByCalendarIdOrderByDayDesc(UUID calendarId);
 
     long countByCalendarId(UUID calendarId);
+
+    void deleteAllByWorkoutId(UUID workoutId);
 }

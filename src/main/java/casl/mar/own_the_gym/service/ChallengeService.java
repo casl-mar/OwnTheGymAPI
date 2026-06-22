@@ -9,6 +9,7 @@ import casl.mar.own_the_gym.entity.Workout;
 import casl.mar.own_the_gym.entity.enums.WorkoutType;
 import casl.mar.own_the_gym.exception.BadRequestException;
 import casl.mar.own_the_gym.exception.NotFoundException;
+import casl.mar.own_the_gym.repository.ChallengeDayRepository;
 import casl.mar.own_the_gym.repository.ChallengeRepository;
 import casl.mar.own_the_gym.repository.UserRepository;
 import casl.mar.own_the_gym.repository.WorkoutRepository;
@@ -27,6 +28,7 @@ import java.util.UUID;
 public class ChallengeService {
 
     private final ChallengeRepository challengeRepository;
+    private final ChallengeDayRepository challengeDayRepository;
     private final WorkoutRepository workoutRepository;
     private final UserRepository userRepository;
 
@@ -73,6 +75,7 @@ public class ChallengeService {
     @Transactional
     public void delete(UserPrincipal principal, UUID id) {
         Challenge challenge = findOwnedChallenge(principal.getId(), id);
+        challengeDayRepository.deleteAllByChallengeId(challenge.getId());
         challengeRepository.delete(challenge);
     }
 
